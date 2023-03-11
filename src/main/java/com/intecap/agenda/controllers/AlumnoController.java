@@ -21,14 +21,30 @@ public class AlumnoController {
         return alumnoService.getAll();
     }
 
+    /**
+     * Metodo para buscar por id
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Alumno buscarAlumno(@PathVariable("id") int id){
+        return alumnoService.buscar(id);
+    }
     @PostMapping("/nuevo")
     public ResponseEntity<?> guardar(@RequestBody Alumno alumno){
         alumnoService.guardar(alumno);
         return new ResponseEntity<>("Alumno creado.", HttpStatus.OK);
     }
 
+    /**
+     * Metodo alternativo para devolver el alumno.
+     * @param alumno
+     * @return
+     */
     @PostMapping("/new")
     public Alumno nuevo(@RequestBody Alumno alumno){
         return alumnoService.save(alumno);
     }
+
+
 }
