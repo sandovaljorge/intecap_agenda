@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/auto")
+@CrossOrigin(origins = {"http:/localhost:3000","http:/localhost:3001","http:/localhost:4200"})
 public class AutoController {
 
     @Autowired
