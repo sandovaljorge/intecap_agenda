@@ -19,22 +19,23 @@ public class AlumnoService  {
         return (ArrayList<Alumno>) alumnoRepository.findAll();
     }
 
-    public void guardar(Alumno alumno){
+    /*public void guardar(Alumno alumno){
         alumnoRepository.save(alumno);
-    }
-
-    /**
-     * Metodo alternativo para insertar un registro.
-     * @param alumno
-     * @return
-     */
-    public Alumno save(Alumno alumno){
-        return alumnoRepository.save(alumno);
-    }
-
+    }*/
     public Alumno buscar(int id) {
         return alumnoRepository.findById(id).orElse(null);
     }
 
+    public Alumno guardar(Alumno alumno){
+        return alumnoRepository.save(alumno);
+    }
+
+    public Alumno actualizar(Alumno alumno){
+        return alumnoRepository.save(alumno);
+    }
+
+    public void eliminar(int id){
+        alumnoRepository.deleteById(id);
+    }
 
 }
